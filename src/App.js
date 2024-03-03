@@ -1,22 +1,23 @@
-import React from "react";
+const user = {
+  name: "John Doe",
+  age: 30,
+  imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
+  imageSize: 90,
+};
 
-function Profile() {
+export default function Profile() {
   return (
-    <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="image of Katherine Johnson"
-    />
-  );
-}
-
-export default function Gallery() {
-  return (
-    <section>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
-    </section>
+    <>
+      <h1>{user.name}</h1>
+      <img
+        className="Avatar"
+        src="{user.imageUrl}"
+        alt={`photo of ` + user.name}
+        style={{
+          width: user.imageSize,
+          height: user.imageSize,
+        }}
+      />
+    </>
   );
 }
